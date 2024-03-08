@@ -3,6 +3,7 @@ package co.edu.uniquindio.cliente.clienteapp.controller;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import co.edu.uniquindio.cliente.clienteapp.factory.ModelFactory;
 import co.edu.uniquindio.cliente.clienteapp.model.Cliente;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -11,6 +12,9 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 public class ClienteController {
+
+    ModelFactory modelFactory;
+
 
     @FXML
     private ResourceBundle resources;
@@ -49,17 +53,28 @@ public class ClienteController {
 
     @FXML
     void initialize() {
+        modelFactory = ModelFactory.getInstancia();
     }
 
     private void agregarCliente() {
-        Cliente cliente = new Cliente();
-        cliente.setNombre(txtNombre.getText());
-        cliente.setApellido(txtApellido.getText());
-        cliente.setCedula(txtCedula.getText());
-        cliente.setEdad(Integer.parseInt(txtEdad.getText()));
-        cliente.setTelefonoFijo(txtTelefonoFijo.getText());
-        cliente.setTelefonoCelular(txtCelular.getText());
-        txtResultado.setText(cliente.toString());
+//        Cliente cliente = new Cliente();
+//        cliente.setNombre(txtNombre.getText());
+//        cliente.setApellido(txtApellido.getText());
+//        cliente.setCedula(txtCedula.getText());
+//        cliente.setEdad(Integer.parseInt(txtEdad.getText()));
+//        cliente.setTelefonoFijo(txtTelefonoFijo.getText());
+//        cliente.setTelefonoCelular(txtCelular.getText());
+//        txtResultado.setText(cliente.toString());
+
+
+        // 1. validar los campos que esten completos
+        // de acuerdo al tipo de usuario
+
+        //2. crear el cliente
+        boolean creado = modelFactory.crearCliente(txtNombre.getText(),);
+
+        //3. emitir un mensaje de acuerdo al estado
+
     }
 
 

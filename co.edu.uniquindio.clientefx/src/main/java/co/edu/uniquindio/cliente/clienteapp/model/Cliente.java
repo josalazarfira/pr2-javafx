@@ -1,84 +1,63 @@
 package co.edu.uniquindio.cliente.clienteapp.model;
 
+import co.edu.uniquindio.cliente.clienteapp.model.builder.ClienteBuilder;
+
 public class Cliente {
 
-    private String cedula;
-    private String nombre;
-    private String apellido;
-    private int edad;
-    private String telefonoFijo;
-    private String telefonoCelular;
-    private String direccion;
+        private String cedula;
+        private String nombre;
+        private String apellido;
+        private String email;
+        private String telefonoFijo;
+        private String telefonoCelular;
+        private String direccion;
 
-    public Cliente() {
-    }
+        public Cliente(String cedula,
+                       String nombre,
+                       String apellido,
+                       String email,
+                       String telefonoFijo,
+                       String telefonoCelular,
+                       String direccion) {
+            this.cedula = cedula;
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.email = email;
+            this.telefonoFijo = telefonoFijo;
+            this.telefonoCelular = telefonoCelular;
+            this.direccion = direccion;
+        }
 
-    public String getCedula() {
-        return cedula;
-    }
 
-    public void setCedula(String cedula) {
-        this.cedula = cedula;
-    }
+        public static ClienteBuilder builder(){
+            return new ClienteBuilder();
+        }
 
-    public String getNombre() {
-        return nombre;
-    }
+        public String getCedula() {
+            return cedula;
+        }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
+        public String getNombre() {
+            return nombre;
+        }
 
-    public String getApellido() {
-        return apellido;
-    }
+        public String getApellido() {
+            return apellido;
+        }
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
+        public String getEmail() {
+            return email;
+        }
 
-    public int getEdad() {
-        return edad;
-    }
+        public String getTelefonoFijo() {
+            return telefonoFijo;
+        }
 
-    public void setEdad(int edad) {
-        this.edad = edad;
-    }
+        public String getTelefonoCelular() {
+            return telefonoCelular;
+        }
 
-    public String getTelefonoFijo() {
-        return telefonoFijo;
-    }
-
-    public void setTelefonoFijo(String telefonoFijo) {
-        this.telefonoFijo = telefonoFijo;
-    }
-
-    public String getTelefonoCelular() {
-        return telefonoCelular;
-    }
-
-    public void setTelefonoCelular(String telefonoCelular) {
-        this.telefonoCelular = telefonoCelular;
-    }
-
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
-
-    @Override
-    public String toString() {
-        return "Cliente{" +
-                "cedula='" + cedula + '\'' +
-                ", nombre='" + nombre + '\'' +
-                ", apellido='" + apellido + '\'' +
-                ", edad=" + edad +
-                ", telefonoFijo='" + telefonoFijo + '\'' +
-                ", telefonoCelular='" + telefonoCelular + '\'' +
-                ", direccion='" + direccion + '\'' +
-                '}';
-    }
+        public String getDireccion() {
+            return direccion;
+        }
 }
