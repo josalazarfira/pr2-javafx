@@ -10,6 +10,7 @@ public class ClienteBuilder {
     protected String telefonoFijo;
     protected String telefonoCelular;
     protected String direccion;
+    protected int edad;
 
     public ClienteBuilder cedula(String cedula) {
         this.cedula = cedula;
@@ -46,7 +47,12 @@ public class ClienteBuilder {
         return this; // Devuelve la instancia actual de ClienteBuilder
     }
 
+    public ClienteBuilder edad(int edad) {
+        this.edad = edad;
+        return this; // Devuelve la instancia actual de ClienteBuilder
+    }
+
     public Cliente build() {
-        return new Cliente(cedula, nombre, apellido, email, telefonoFijo, telefonoCelular, direccion);
+        return new Cliente(cedula, nombre, apellido, email, telefonoFijo, telefonoCelular, direccion, edad);
     }
 }

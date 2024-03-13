@@ -47,8 +47,34 @@ public class ClienteController {
     private TextArea txtResultado;
 
     @FXML
+    private Button btnMayorEdad;
+
+    @FXML
+    private Button btnObtenerPorCiudad;
+
+    @FXML
+    private TextArea txtResultadoOperacciones;
+
+    @FXML
+    private TextField txtCiudadParametro;
+
+    @FXML
     void onAgregarCliente(ActionEvent event) {
         agregarCliente();
+    }
+
+    @FXML
+    void onObtenerPorCiudad(ActionEvent event) {
+        obtenerPorCiudad();
+    }
+
+    private void obtenerPorCiudad() {
+        if(!txtCiudadParametro.getText().isEmpty()){
+            String resultado = modelFactory.obtenerClientesPorCiudad(txtCiudadParametro.getText());
+            txtResultadoOperacciones.setText(resultado);
+        }else{
+            txtResultadoOperacciones.setText("El campo esta vacio, es requerido....");
+        }
     }
 
     @FXML
@@ -71,7 +97,7 @@ public class ClienteController {
         // de acuerdo al tipo de usuario
 
         //2. crear el cliente
-        boolean creado = modelFactory.crearCliente(txtNombre.getText(),);
+//        boolean creado = modelFactory.crearCliente(txtNombre.getText(),);
 
         //3. emitir un mensaje de acuerdo al estado
 

@@ -11,6 +11,7 @@ public class Cliente {
         private String telefonoFijo;
         private String telefonoCelular;
         private String direccion;
+        private int edad;
 
         public Cliente(String cedula,
                        String nombre,
@@ -18,7 +19,8 @@ public class Cliente {
                        String email,
                        String telefonoFijo,
                        String telefonoCelular,
-                       String direccion) {
+                       String direccion,
+                       int edad) {
             this.cedula = cedula;
             this.nombre = nombre;
             this.apellido = apellido;
@@ -26,6 +28,7 @@ public class Cliente {
             this.telefonoFijo = telefonoFijo;
             this.telefonoCelular = telefonoCelular;
             this.direccion = direccion;
+            this.edad = edad;
         }
 
 
@@ -60,4 +63,19 @@ public class Cliente {
         public String getDireccion() {
             return direccion;
         }
+
+
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "cedula='" + cedula + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", email='" + email + '\'' +
+                ", telefonoFijo='" + telefonoFijo + '\'' +
+                ", telefonoCelular='" + telefonoCelular + '\'' +
+                ", direccion='" + direccion + '\'' +
+                ", edad=" + edad +
+                '}';
+    }
 }

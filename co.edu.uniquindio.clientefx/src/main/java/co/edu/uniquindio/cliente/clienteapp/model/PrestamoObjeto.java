@@ -73,4 +73,16 @@ public class PrestamoObjeto {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+    public String obtenerClientesPorCiudad(String ciudad) {
+        String resultado = "";
+
+        for (Cliente cliente: getListaClientes()) {
+            if(cliente.getDireccion().equalsIgnoreCase(ciudad)){
+                resultado = resultado + cliente.toString()+ "\n";
+            }
+        }
+
+        return resultado;
+    }
 }
