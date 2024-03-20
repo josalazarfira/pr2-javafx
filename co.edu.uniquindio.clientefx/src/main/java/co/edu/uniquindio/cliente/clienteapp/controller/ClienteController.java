@@ -92,6 +92,8 @@ public class ClienteController {
 //        cliente.setTelefonoCelular(txtCelular.getText());
 //        txtResultado.setText(cliente.toString());
 
+//        ClienteDto.Builder().
+
 
         // 1. validar los campos que esten completos
         // de acuerdo al tipo de usuario
