@@ -64,6 +64,9 @@ public class Cliente {
             return direccion;
         }
 
+    public int getEdad() {
+        return edad;
+    }
 
     @Override
     public String toString() {

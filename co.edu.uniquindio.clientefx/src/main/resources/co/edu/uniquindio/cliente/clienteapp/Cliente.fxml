@@ -5,15 +5,16 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.SplitPane?>
-<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="699.0" prefWidth="834.0" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.cliente.clienteapp.controller.ClienteController">
+<AnchorPane prefHeight="699.0" prefWidth="834.0" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.cliente.clienteapp.viewcontroller.ClienteViewController">
    <children>
-      <SplitPane dividerPositions="0.6319648093841642" orientation="VERTICAL" prefHeight="684.0" prefWidth="834.0">
+      <SplitPane dividerPositions="0.48826979472140764" orientation="VERTICAL" prefHeight="684.0" prefWidth="834.0">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="428.0" prefWidth="832.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="348.0" prefWidth="832.0">
                <children>
                   <Button fx:id="btnAgregarCliente" layoutX="322.0" layoutY="274.0" mnemonicParsing="false" onAction="#onAgregarCliente" text="Agregar cliente" />
                   <Label layoutX="35.0" layoutY="74.0" text="Nombre:" />
@@ -34,15 +35,23 @@
                   <RadioButton layoutX="127.0" layoutY="218.0" mnemonicParsing="false" text="Cliente basico" />
                   <RadioButton layoutX="301.0" layoutY="219.0" mnemonicParsing="false" text="Cliente premium" />
                   <RadioButton layoutX="491.0" layoutY="218.0" mnemonicParsing="false" text="ClienteVip" />
-                  <TextArea fx:id="txtResultado" layoutX="16.0" layoutY="311.0" prefHeight="105.0" prefWidth="785.0" />
+                  <Button layoutX="145.0" layoutY="274.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="107.0" text="Nuevo" />
+                  <Button layoutX="484.0" layoutY="275.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="94.0" text="Actualizar" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <Button fx:id="btnMayorEdad" layoutX="37.0" layoutY="28.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="161.0" text="Obtener mayores edad" />
-                  <TextArea fx:id="txtResultadoOperacciones" layoutX="265.0" layoutY="14.0" prefHeight="205.0" prefWidth="534.0" />
-                  <Button fx:id="btnObtenerPorCiudad" layoutX="43.0" layoutY="92.0" mnemonicParsing="false" onAction="#onObtenerPorCiudad" prefHeight="25.0" prefWidth="161.0" text="Obtener por ciudad" />
-                  <TextField fx:id="txtCiudadParametro" layoutX="39.0" layoutY="124.0" />
+                  <TableView fx:id="tableCliente" layoutX="10.0" layoutY="20.0" prefHeight="269.0" prefWidth="750.0">
+                    <columns>
+                      <TableColumn fx:id="tcNombre" prefWidth="136.25886058807373" text="Nombre" />
+                      <TableColumn fx:id="tcApellido" prefWidth="168.514892578125" text="Apellido" />
+                        <TableColumn fx:id="tcCedula" prefWidth="135.4850616455078" text="Cedula" />
+                        <TableColumn fx:id="tcEdad" prefWidth="105.652099609375" text="Edad" />
+                        <TableColumn fx:id="tcFijo" prefWidth="71.34786987304688" text="Telefono fijo" />
+                        <TableColumn fx:id="tcCelular" prefWidth="131.91220092773438" text="Celular" />
+                    </columns>
+                  </TableView>
+                  <Button layoutX="348.0" layoutY="303.0" mnemonicParsing="false" text="Eliminar" />
                </children>
             </AnchorPane>
         </items>

@@ -1,4 +1,4 @@
-package co.edu.uniquindio.cliente.clienteapp.controller;
+package co.edu.uniquindio.cliente.clienteapp.viewcontroller;
 
 import java.net.URL;
 import java.util.ResourceBundle;

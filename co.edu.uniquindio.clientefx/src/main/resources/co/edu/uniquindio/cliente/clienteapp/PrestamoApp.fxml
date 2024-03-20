@@ -6,7 +6,7 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="713.0" prefWidth="886.0" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.cliente.clienteapp.controller.PrestamoAppController">
+<AnchorPane prefHeight="713.0" prefWidth="886.0" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.cliente.clienteapp.viewcontroller.PrestamoAppController">
    <children>
       <TabPane layoutX="-1.0" layoutY="-3.0" prefHeight="713.0" prefWidth="867.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>

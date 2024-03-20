@@ -3,6 +3,8 @@ package co.edu.uniquindio.cliente.clienteapp.factory;
 import co.edu.uniquindio.cliente.clienteapp.model.Cliente;
 import co.edu.uniquindio.cliente.clienteapp.model.PrestamoObjeto;
 
+import java.util.List;
+
 public class ModelFactory {
 
     private static ModelFactory modelFactory;
@@ -63,7 +65,15 @@ public class ModelFactory {
         return prestamoObjeto.crearCliente(cedula,nombre,apellido,email,telefonoFijo,telefonoCelular,direccion);
     }
 
+    public boolean crearCliente(Cliente cliente){
+        return prestamoObjeto.crearCliente(cliente);
+    }
+
     public String obtenerClientesPorCiudad(String ciudad) {
         return prestamoObjeto.obtenerClientesPorCiudad(ciudad);
+    }
+
+    public List<Cliente> obtenerClientes() {
+        return prestamoObjeto.getListaClientes();
     }
 }

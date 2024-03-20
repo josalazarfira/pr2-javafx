@@ -32,6 +32,16 @@ public class PrestamoObjeto {
         }
     }
 
+    public boolean crearCliente(Cliente nuevoCliente){
+        Cliente clienteEncontrado = obtenerCliente(nuevoCliente.getCedula());
+        if(clienteEncontrado == null){
+            getListaClientes().add(nuevoCliente);
+            return true;
+        }else{
+            return  false;
+        }
+    }
+
 
 
     private Cliente getBuildCliente(String cedula, String nombre, String apellido, String email, String telefonoFijo, String telefonoCelular, String direccion) {
