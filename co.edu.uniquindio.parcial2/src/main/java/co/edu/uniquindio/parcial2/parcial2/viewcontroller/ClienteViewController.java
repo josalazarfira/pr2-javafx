@@ -1,14 +1,7 @@
-package co.edu.uniquindio.cliente.clienteapp.viewcontroller;
+package co.edu.uniquindio.parcial2.parcial2.viewcontroller;
 
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.ResourceBundle;
-
-import co.edu.uniquindio.cliente.clienteapp.controller.ClienteController;
-import co.edu.uniquindio.cliente.clienteapp.factory.ModelFactory;
-import co.edu.uniquindio.cliente.clienteapp.model.Cliente;
+import co.edu.uniquindio.parcial2.parcial2.controller.ClienteController;
+import co.edu.uniquindio.parcial2.parcial2.model.Cliente;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -17,6 +10,12 @@ import javafx.css.PseudoClass;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+import java.util.ResourceBundle;
 
 public class ClienteViewController {
 

@@ -1,4 +1,4 @@
-package co.edu.uniquindio.cliente.clienteapp.model;
+package co.edu.uniquindio.parcial2.parcial2.model;
 
 
 import java.util.ArrayList;
@@ -88,6 +88,31 @@ public class PrestamoObjeto {
         this.nombre = nombre;
     }
 
+
+    public List<Empleado> getListaEmpleados() {
+        return listaEmpleados;
+    }
+
+    public void setListaEmpleados(List<Empleado> listaEmpleados) {
+        this.listaEmpleados = listaEmpleados;
+    }
+
+    public List<Objeto> getListaObjetos() {
+        return listaObjetos;
+    }
+
+    public void setListaObjetos(List<Objeto> listaObjetos) {
+        this.listaObjetos = listaObjetos;
+    }
+
+    public List<Prestamo> getListaPrestamos() {
+        return listaPrestamos;
+    }
+
+    public void setListaPrestamos(List<Prestamo> listaPrestamos) {
+        this.listaPrestamos = listaPrestamos;
+    }
+
     public String obtenerClientesPorCiudad(String ciudad) {
         String resultado = "";
 
@@ -98,5 +123,25 @@ public class PrestamoObjeto {
         }
 
         return resultado;
+    }
+
+    public String obtenerObjetosPrestados(String rango) {
+        String reporte = "";
+        int rangoEntero = Integer.parseInt(rango);
+        List<Objeto> objetoList = getListaObjetos();
+        for (Objeto objeto: objetoList){
+            int contador = 0;
+            for (Prestamo prestamo: getListaPrestamos()) {
+                for (Objeto objetoPrestado: prestamo.getListaObjetosAsociados()) {
+                    if(objeto.getIdObjeto().equals(objetoPrestado.getIdObjeto())){
+                        contador++;
+                    }
+                }
+            }
+            if(contador >= rangoEntero){
+                reporte = reporte+objeto.toString()+"\n";
+            }
+        }
+        return reporte;
     }
 }
