@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="670.0" prefWidth="928.0" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.parcial2.parcial2.viewcontroller.TransaccionPrestamoViewController">
+   <children>
+      <SplitPane dividerPositions="0.5956112852664577" layoutX="14.0" layoutY="14.0" orientation="VERTICAL" prefHeight="640.0" prefWidth="907.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <Label layoutX="27.0" layoutY="25.0" text="Numero Prestamo" />
+                  <Label layoutX="322.0" layoutY="24.0" text="Fecha prestamo" />
+                  <Label layoutX="27.0" layoutY="106.0" text="cliente:" />
+                  <Label layoutX="305.0" layoutY="106.0" text="Cedula cliente:" />
+                  <Label layoutX="27.0" layoutY="77.0" text="Informacion del cliente" />
+                  <Label layoutX="32.0" layoutY="149.0" text="Informacion del empleado" />
+                  <Label layoutX="611.0" layoutY="24.0" text="Fecha entrega" />
+                  <Label layoutX="294.0" layoutY="181.0" text="Cedula empleado::" />
+                  <Label layoutX="33.0" layoutY="180.0" text="Empleado:" />
+                  <Separator layoutX="26.0" layoutY="51.0" prefHeight="3.0" prefWidth="839.0" />
+                  <Separator layoutX="29.0" layoutY="135.0" prefHeight="0.0" prefWidth="639.0" />
+                  <Separator layoutX="31.0" layoutY="206.0" prefHeight="0.0" prefWidth="639.0" />
+                  <Label layoutX="33.0" layoutY="227.0" text="Informacion del objeto" />
+                  <Label layoutX="38.0" layoutY="258.0" text="Nombre:" />
+                  <Label layoutX="339.0" layoutY="257.0" text="Codigo: objeto" />
+                  <TextField fx:id="txtNumPrestamo" layoutX="139.0" layoutY="17.0" prefHeight="25.0" prefWidth="146.0" />
+                  <TextField fx:id="txtFechaPrestamo" layoutX="420.0" layoutY="17.0" prefHeight="25.0" prefWidth="146.0" />
+                  <TextField fx:id="txtFechaEntrega" layoutX="711.0" layoutY="18.0" prefHeight="25.0" prefWidth="146.0" />
+                  <TextField fx:id="txtCliente" layoutX="111.0" layoutY="102.0" prefHeight="25.0" prefWidth="146.0" />
+                  <TextField fx:id="txtClienteCedula" layoutX="422.0" layoutY="102.0" prefHeight="25.0" prefWidth="146.0" />
+                  <TextField fx:id="txtEmpleado" layoutX="112.0" layoutY="175.0" prefHeight="25.0" prefWidth="146.0" />
+                  <TextField fx:id="txtEmpleadoCedula" layoutX="421.0" layoutY="174.0" prefHeight="25.0" prefWidth="146.0" />
+                  <TextField fx:id="txtNombreObjeto" layoutX="108.0" layoutY="255.0" prefHeight="25.0" prefWidth="146.0" />
+                  <TextField fx:id="txtCodigoObjeto" layoutX="421.0" layoutY="252.0" prefHeight="25.0" prefWidth="146.0" />
+                  <Button fx:id="btnAgregar" layoutX="35.0" layoutY="334.0" mnemonicParsing="false" onAction="#actionAgregar" prefHeight="25.0" prefWidth="144.0" text="Agregar" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="185.0" prefWidth="721.0">
+               <children>
+                  <TableView fx:id="tablePrestamos" layoutX="19.0" layoutY="12.0" prefHeight="197.0" prefWidth="848.0">
+                    <columns>
+                      <TableColumn fx:id="tcNumeroPrestamo" prefWidth="105.60746383666992" text="Numero Prestamo" />
+                      <TableColumn fx:id="tcFechaPrestamo" prefWidth="128.94606018066406" text="Fecha prestamo" />
+                        <TableColumn fx:id="tcFechaEntrega" prefWidth="84.05392456054688" text="Fecha entrega" />
+                        <TableColumn fx:id="tcCliente" prefWidth="47.635406494140625" text="cliente" />
+                        <TableColumn fx:id="tcClienteCedula" prefWidth="95.63421630859375" text="Cedula cliente" />
+                        <TableColumn fx:id="tcEmpleado" prefWidth="86.00347900390625" text="Empleado" />
+                        <TableColumn fx:id="tcEmpleadoCedula" prefWidth="75.68814086914062" text="Cedula empleado" />
+                        <TableColumn fx:id="tcNombreObjeto" prefWidth="90.6881103515625" text="Nombre objeto" />
+                        <TableColumn fx:id="tcCodigoObjeto" prefWidth="129.951904296875" text="Codigo objeto" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

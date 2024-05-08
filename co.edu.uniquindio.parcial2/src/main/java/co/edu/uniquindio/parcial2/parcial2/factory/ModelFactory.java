@@ -1,8 +1,12 @@
 package co.edu.uniquindio.parcial2.parcial2.factory;
 
 
+import co.edu.uniquindio.parcial2.parcial2.dto.PrestamoDto;
 import co.edu.uniquindio.parcial2.parcial2.model.*;
 
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class ModelFactory {
@@ -34,6 +38,8 @@ public class ModelFactory {
     private void initPrestamos() {
         Prestamo prestamo1 = new Prestamo();
         prestamo1.setNumeroPrestamo("PR-1");
+        prestamo1.setFechaPrestamo(new Date());
+        prestamo1.setFechaEntrega(new Date());
         prestamo1.setClienteAsociado(prestamoUq.getListaClientes().get(0));
         prestamo1.setEmpleadoAsociado(prestamoUq.getListaEmpleados().get(0));
         prestamo1.getListaObjetosAsociados().add(prestamoUq.getListaObjetos().get(0));
@@ -41,6 +47,8 @@ public class ModelFactory {
 
         Prestamo prestamo2 = new Prestamo();
         prestamo2.setNumeroPrestamo("PR-2");
+        prestamo2.setFechaPrestamo(new Date());
+        prestamo2.setFechaEntrega(new Date());
         prestamo2.setClienteAsociado(prestamoUq.getListaClientes().get(1));
         prestamo2.setEmpleadoAsociado(prestamoUq.getListaEmpleados().get(1));
         prestamo2.getListaObjetosAsociados().add(prestamoUq.getListaObjetos().get(1));
@@ -132,5 +140,38 @@ public class ModelFactory {
 
     public String obtenerObjetosPrestados(String rango) {
         return prestamoUq.obtenerObjetosPrestados(rango);
+    }
+
+    public List<PrestamoDto> obtenerPrestamos() {
+        List<Prestamo> prestamoList = prestamoUq.getListaPrestamos();
+        List<PrestamoDto> prestamoDtoList = new ArrayList<>();
+        for (Prestamo prestamo :prestamoList) {
+            prestamoDtoList.add(buildPrestamoDto(prestamo));
+        }
+
+        return prestamoDtoList;
+    }
+
+    private PrestamoDto buildPrestamoDto(Prestamo prestamo) {
+        return new PrestamoDto(
+                prestamo.getNumeroPrestamo(),
+                prestamo.getFechaPrestamo().toString(),
+                prestamo.getFechaEntrega().toString(),
+                prestamo.getEmpleadoAsociado().getNombre(),
+                prestamo.getEmpleadoAsociado().getCedula(),
+                prestamo.getClienteAsociado().getNombre(),
+                prestamo.getClienteAsociado().getCedula(),
+                prestamo.getListaObjetosAsociados().get(0).getNombre(),
+                prestamo.getListaObjetosAsociados().get(0).getIdObjeto()
+        );
+    }
+
+    public boolean crearPrestamo(PrestamoDto prestamoDto) {
+        Prestamo prestamo = buildPrestamo(prestamoDto);
+//        return prestamoUq.crearPrestamo(prestamo);
+        return true;
+    }
+
+    private Prestamo buildPrestamo(PrestamoDto prestamoDto) {
     }
 }

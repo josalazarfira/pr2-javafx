@@ -6,10 +6,23 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="713.0" prefWidth="886.0" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.parcial2.parcial2.viewcontroller.PrestamoAppController">
+<AnchorPane prefHeight="744.0" prefWidth="966.0" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.parcial2.parcial2.viewcontroller.PrestamoAppController">
    <children>
-      <TabPane layoutX="-1.0" layoutY="-3.0" prefHeight="713.0" prefWidth="867.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane layoutX="-1.0" layoutY="-3.0" prefHeight="732.0" prefWidth="958.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
+            <Tab text="Prestamo">
+                <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <children>
+                            <SplitPane layoutX="14.0" layoutY="7.0" orientation="VERTICAL" prefHeight="542.0" prefWidth="790.0">
+                                <items>
+                                    <fx:include source="TransaccionPrestamo.fxml" />
+                                </items>
+                            </SplitPane>
+                        </children>
+                    </AnchorPane>
+                </content>
+            </Tab>
             <Tab text="Reportes">
                 <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
@@ -55,11 +68,6 @@
             </content>
           </Tab>
             <Tab text="Objeto">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-              </content>
-            </Tab>
-            <Tab text="Prestamo">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
               </content>

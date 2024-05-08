@@ -1,6 +1,8 @@
 package co.edu.uniquindio.parcial2.parcial2.model;
 
 
+import co.edu.uniquindio.parcial2.parcial2.dto.PrestamoDto;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -144,4 +146,6 @@ public class PrestamoObjeto {
         }
         return reporte;
     }
+
+
 }
